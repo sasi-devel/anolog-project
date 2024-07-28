@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+}
+.clock{
+    width: 500px;
+    height: 500px;
+    background-color: bisque;
+    border-radius: 50%;
+    border: 5px double red;
+    position: relative;
+}
+.clock::before{
+    content: 'Ajanta';
+    color: red;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    font-size: 30px;
+}
+.clock::after{
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+} 
+.number{
+    --rotate:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    color: red;
+    transform: rotate(var(--rotate));
+}
+.six{
+    rotate: 180deg;
+    margin-top: 460px;
+}
+.number-1{--rotate:30deg;}
+.number-2{--rotate:60deg;}
+.number-3{--rotate:90deg;}
+.number-4{--rotate:120deg;}
+.number-5{--rotate:150deg;}
+.number-6{--rotate:180deg;}
+.number-7{--rotate:210deg;}
+.number-8{--rotate:240deg;}
+.number-9{--rotate:270deg;}
+.number-10{--rotate:300deg;}
+.number-11{--rotate:330deg;}
+.needle{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 40%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    border: 1px solid red;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.secs{
+    background-color: aqua;
+    width: 5px;
+    height: 45%;
+}
+.mins{
+    background-color: aqua;
+    width: 7px;
+    height: 40%; 
+}
+.hrs{
+    background-color: aqua;
+    width: 10px;
+    height: 25%;
+}
